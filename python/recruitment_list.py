@@ -21,8 +21,8 @@ import time
 
 # Configuration
 
-region = "Region Goes Here"
-user_agent = "User Nation <email goes here>"
+region = "The Black Hawks"
+user_agent = "Aurum Raider"
 rate = 40 / 30
 out_file = "nations.txt"  # Rename this as you desire. You can use an absolute or relative path.
 refounds = False  # Set to False to instead target feeders
