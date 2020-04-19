@@ -1,12 +1,11 @@
-**I am no longer developing any of my NationStates-related projects. Any individual may fork this codebase under the terms of the GNU General Public License, v. 3. Please see <http://www.gnu.org/licenses/> for details.**
 
-This is a repository for various one-off NationStates related python scripts. All scripts are written in Python 3 and are provided as-is under a GPLv3 license.
+This is a repository for various one-off NationStates related scripts. All scripts are provided as-is under the GPL v2.0 license (see LICENSE).
 
 # Endorsement Graph
 
 `generate_links.py` and `generate_links_from_dump.py`
 
-These scripts can be used to generate network graph datasets from a region's WA 
+These scripts can be used to generate network graph datasets from a region's WA
 nations. It will generate a list of nodes and edges as CSV files that can quickly be imported into a program like
 [Gephi](http://gephi.org/).
 
@@ -35,7 +34,7 @@ Configuration is handled by `login.json`, which has the following format:
         "nation four": "hash goes here"
     }
 }
-``` 
+```
 
 After a successful run with no login errors, `login.py` will offer to replace plain-text passwords in the configuration file with authentication hashes provided by the NationStates API. If you need to add additional nations later, add them under "nations" using the same format as above.
 
@@ -51,7 +50,7 @@ Configuration options can be found inside the script itself.
 
 `NSDict.py`
 
-Converts a API dump file into an `OrderedDict`-like object for easy use. 
+Converts a API dump file into an `OrderedDict`-like object for easy use.
 - `EntityDict` extends `OrderedDict` and uses `cElementTree` to generate a dictionary from an XML string or file.
 - `RegionDict` extends `EntityDict` to parse region API queries and dumps
 - `NationDict` extends `EntityDict` to parse nation API queries and dumps
@@ -69,3 +68,13 @@ for region in regions:
 ```
 
 This will print every single region in the game and their populations.
+
+# Endorsement Button Mover
+
+Moves the endorsement button to beneath a nation's flag.
+Integrating this script into Tampermonkey is easy enough.
+
+# Point AutoClipboard
+
+Binds an event to the WA acceptance button to copy your nation's URL to the clipboard.
+While this script works standalone, I have not yet gotten it to work with Tampermonkey.
